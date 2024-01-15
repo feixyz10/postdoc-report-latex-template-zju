@@ -1,0 +1,126 @@
+% !TeX root = ./thuthesis-example.tex
+
+% 论文基本信息配置
+
+\thusetup{
+  %******************************
+  % 注意：
+  %   1. 配置里面不要出现空行
+  %   2. 不需要的配置信息可以删除
+  %   3. 建议先阅读文档中所有关于选项的说明
+  %******************************
+  %
+  % 输出格式
+  %   选择打印版（print）或用于提交的电子版（electronic），前者会插入空白页以便直接双面打印
+  %
+  output = print,
+  %
+  % 标题
+  %   可使用“\\”命令手动控制换行
+  %
+  title  = {xxxxxxxxxxxx关键技术研究},
+  title* = {Research on Key Technologies for xxxxxxxxx},
+  %
+  % 姓名
+  %
+  author  = {爱因斯坦},
+  author* = {Albert Einstein},
+  %
+  % 是否在中文封面后的空白页生成书脊（默认 false）
+  %
+  include-spine = false,
+  %
+  % 密级和年限
+  %   秘密, 机密, 绝密
+  %
+  secret-level = {公开},
+  % secret-year  = {10},
+  %
+  % 博士后专有部分
+  %
+  clc                = {},
+  udc                = {},
+  id                 = {},
+  discipline-level-1 = {},  % 流动站（一级学科）名称
+  discipline-level-2 = {},          % 专业（二级学科）名称
+  start-date         = {20xx-xx-xx},        % 研究工作起始时间
+  end-date           = {20xx-xx-xx},
+  postdoc-supervisor = {xx教授}
+}
+
+% 载入所需的宏包
+
+% 定理类环境宏包
+\usepackage{amsthm}
+% 也可以使用 ntheorem
+% \usepackage[amsmath,thmmarks,hyperref]{ntheorem}
+
+\thusetup{
+  %
+  % 数学字体
+  % math-style = GB,  % GB | ISO | TeX
+  math-font  = xits,  % sitx | xits | libertinus
+}
+
+% 可以使用 nomencl 生成符号和缩略语说明
+% \usepackage{nomencl}
+% \makenomenclature
+
+% 表格加脚注
+\usepackage{threeparttable}
+
+% 表格中支持跨行
+\usepackage{multirow}
+
+% 固定宽度的表格。
+% \usepackage{tabularx}
+
+% 跨页表格
+\usepackage{longtable}
+
+% 算法
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% 量和单位
+\usepackage{siunitx}
+
+% 参考文献使用 BibTeX + natbib 宏包
+% 顺序编码制
+\usepackage[sort]{natbib}
+\bibliographystyle{thuthesis-numeric}
+
+% 著者-出版年制
+% \usepackage{natbib}
+% \bibliographystyle{thuthesis-author-year}
+
+% 本科生参考文献的著录格式
+% \usepackage[sort]{natbib}
+% \bibliographystyle{thuthesis-bachelor}
+
+% 参考文献使用 BibLaTeX 宏包
+% \usepackage[style=thuthesis-numeric]{biblatex}
+% \usepackage[style=thuthesis-author-year]{biblatex}
+% \usepackage[style=apa]{biblatex}
+% \usepackage[style=mla-new]{biblatex}
+% 声明 BibLaTeX 的数据库
+% \addbibresource{ref/refs.bib}
+
+% 定义所有的图片文件在 figures 子目录下
+\graphicspath{{figures/}}
+
+% 数学命令
+\makeatletter
+\newcommand\dif{%  % 微分符号
+  \mathop{}\!%
+  \ifthu@math@style@TeX
+    d%
+  \else
+    \mathrm{d}%
+  \fi
+}
+\makeatother
+
+% hyperref 宏包在最后调用
+\usepackage{hyperref}
+\usepackage{setspace}

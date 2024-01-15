@@ -1,0 +1,50 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = en_US
+
+\documentclass[degree=postdoc]{thuthesis}
+
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+% 论文基本配置，加载宏包等全局配置
+\input{thusetup}
+
+
+\begin{document}
+
+% 封面
+\maketitle
+
+\frontmatter
+\input{data/abstract}
+
+% 目录
+\tableofcontents
+
+% 插图和附表清单
+\listoffigures          % 插图清单
+\listoftables           % 附表清单
+
+% 符号对照表
+% \input{data/denotation}
+
+% 正文部分
+\mainmatter
+\input{data/lf_chap01}
+\input{data/lf_chap02}
+\input{data/lf_chap03}
+
+
+% 其他部分
+\backmatter
+
+% 参考文献
+\bibliography{ref/REF}   % 参考文献使用 BibTeX 编译
+
+% 致谢
+\input{data/acknowledgements}
+
+% 个人简历、相关学术成果
+\input{data/resume}
+
+\end{document}
